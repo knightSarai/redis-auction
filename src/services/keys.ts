@@ -3,6 +3,9 @@ export const userKey = (id: string) => 'user#' + id;
 export const sessionKey = (id: string) => 'session#' + id;
 export const usernamesUniqueKey = () => 'usernames:unique'
 export const usernamesKey = () => 'usernames'
-export const itemKey = (id: string) => 'item#' + id;
 export const usersLikesKey = (userId: string) => 'users:likes#' + userId;
 
+export const itemsKey = (id: string) => 'items#' + id;
+export const itemsByViewsKey = () => 'items:views';
+export const itemsByEndingAtKey = () => 'items:endingAt';
+export const itemsViewsKeys = (id: string) => 'items:views#' + id;

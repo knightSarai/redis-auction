@@ -11,3 +11,4 @@ export const itemsByEndingAtKey = () => 'items:endingAt';
 export const itemsViewsKeys = (id: string) => 'items:views#' + id;
 export const itemsPriceKey = () => 'items:price';
 export const bidHistoryKey = (id: string) => 'bidHistory#' + id;
+export const itemsIndexKey = () => 'idx:items';

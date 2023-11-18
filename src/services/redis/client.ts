@@ -1,4 +1,5 @@
 import { createClient, defineScript } from 'redis';
+import { createIndexes } from './create-indexes';
 import { itemsKey, itemsByViewsKey, itemsViewsKeys } from '$services/keys';
 import incrementViewScript from './scripts/increment-view.lua';
 
@@ -27,6 +28,15 @@ const client = createClient({
 });
 
 client.on('error', (err) => console.error(err));
+
 client.connect();
+
+client.on('connect', async () => {
+    try {
+        await createIndexes();
+    } catch (error) {
+        console.error(error);
+    }
+});
 
 export { client };
